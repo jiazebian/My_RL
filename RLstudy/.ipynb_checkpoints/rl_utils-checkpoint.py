@@ -68,7 +68,7 @@ def train_on_policy_agent(env, agent, num_episodes):
                 state = env_reset(env, seed=0)
                 done = False
                 while not done:#在一个回合中不断交互
-                    action = agent.take_action(state) #选择一个策略，具体选什么需要参考算法定义，在PPO中是按照概率采样
+                    action = agent.take_action(state) #选择一个策略，具体选什么需要参考算法定义
                     #next_state, reward, done, _ = env.step(action)
                     next_state, reward, done, _ = env_step(env,action)
                     transition_dict['states'].append(state)
